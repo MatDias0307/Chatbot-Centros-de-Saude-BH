@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function getBotResponse(userText) {
     // const apiUrl = 'http://127.0.0.1:5000/api/chat';;
-    const apiUrl = 'https://chatbot-centros-de-saude-bh-backend.onrender.com';
+    const apiUrl = 'https://chatbot-centros-de-saude-bh-backend.onrender.com/api/chat';
 
     try {
       const response = await fetch(apiUrl, {

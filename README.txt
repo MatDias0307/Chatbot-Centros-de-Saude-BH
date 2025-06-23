@@ -49,11 +49,11 @@ HOSPEDAGEM
 --------------------------------------------
 FRONTEND:
 - Plataforma: GitHub Pages
-- URL: https://chatbotcentrossaudebh.github.io/
+- URL: https://matdias0307.github.io/Chatbot-Centros-de-Saude-BH/
 
 BACKEND:
 - Plataforma: Render
-- URL: https://chatbot-centros-saude-bh-backend.onrender.com
+- URL: https://chatbot-centros-de-saude-bh-backend.onrender.com
 
 
 DADOS UTILIZADOS
@@ -78,7 +78,7 @@ entidades (bairro, região, nome do centro) e consultar as informações
 dos Centros de Saúde no dataset.
 
 1. Clone o repositório:
-   git clone https://github.com/seuusuario/chatbot-saude-bh.git
+   git clone https://github.com/MatDias0307/Chatbot-Centros-de-Saude-BH.git
    cd chatbot-saude-bh/backend
 
 2. Configure ambiente virtual:
@@ -125,4 +125,4 @@ Matheus Dias Soares
 matheus.diassl0307@gmail.com
 
 Repositório GitHub:
-https://github.com/chatbotcentrossaudebh
+https://github.com/MatDias0307/Chatbot-Centros-de-Saude-BH#

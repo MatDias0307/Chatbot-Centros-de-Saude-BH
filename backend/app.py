@@ -4,6 +4,7 @@ from nlp.processor import NLPProcessor
 import logging
 from functools import wraps
 from typing import Dict, Optional, List
+import os
 
 logging.basicConfig(
     level=logging.INFO,
@@ -21,7 +22,7 @@ CORS(app, resources={
     r"/api/*": {
         "origins": [
             "http://127.0.0.1:5500",
-            "https://matdias0307.github.io/Chatbot-Centros-de-Saude-BH/"
+            "https://matdias0307.github.io"
         ]
     }
 })
@@ -141,4 +142,5 @@ def generate_response(entities: dict, centers_info: Optional[List[Dict]]) -> str
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

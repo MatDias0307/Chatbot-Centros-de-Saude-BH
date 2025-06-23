@@ -1,0 +1,11 @@
+flask
+flask-cors
+spacy
+pandas
+python-dotenv
+geopy
+requests
+scikit-learn
+unidecode
+numpy
+gunicorn

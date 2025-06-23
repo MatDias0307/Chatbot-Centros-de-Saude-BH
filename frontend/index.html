@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saúde BH - Chatbot de Centros de Saúde</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo-container">
+          <i class="fas fa-hospital-alt logo-icon"></i>
+          <div class="header-text">
+            <h1>Saúde BH</h1>
+            <p class="subtitle">Assistente Virtual de Centros de Saúde</p>
+          </div>
+        </div>
+        <button id="toggle-help" class="help-btn" aria-label="Mostrar ajuda">
+          <i class="fas fa-question-circle"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="chat-container">
+      <div id="help-card" class="help-card">
+        <div class="help-header">
+          <h2>🔍 Como buscar informações?</h2>
+          <button id="close-help" class="close-btn" aria-label="Fechar ajuda">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      
+        <div class="help-content">
+          <div class="guide-card">
+            <h3>🏘️ Por Bairro</h3>
+            <p>Encontre todos os centros de saúde em um bairro específico.</p>
+            <p><strong>Ex.:</strong> "Quero um posto de saúde no bairro Barreiro"</p>
+          </div>
+        
+          <div class="guide-card">
+            <h3>📍 Por Região</h3>
+            <p>Consulte os centros de saúde de uma região (distrito sanitário).</p>
+            <p><strong>Ex.:</strong> "Quais centros de saúde existem na região da Pampulha"</p>
+          </div>
+        
+          <div class="guide-card">
+            <h3>🏥 Por Nome do Centro</h3>
+            <p>Busque informações de um centro de saúde específico.</p>
+            <p><strong>Ex.:</strong> "Quero informações do Centro de Saúde Santa Terezinha"</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="messages-container">
+        <div class="chat-box" id="chat-box">
+          <!-- Mensagens aparecem aqui -->
+        </div>
+      </div>
+
+      <form id="chat-form" class="message-form">
+        <div class="input-container">
+          <input type="text" id="user-input" placeholder="Digite sua mensagem aqui..." autocomplete="off" required />
+          <button type="submit" class="send-btn" aria-label="Enviar mensagem">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="https://dados.pbh.gov.br/dataset/area-de-abrangencia-saude" target="_blank">
+            <i class="fas fa-database"></i> Dados Abertos
+          </a>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Prefeitura de Belo Horizonte - Secretaria Municipal de Saúde</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/chatbot.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const helpCard = document.getElementById('help-card');
+      const closeHelp = document.getElementById('close-help');
+      const toggleHelp = document.getElementById('toggle-help');
+
+      closeHelp.addEventListener('click', function() {
+        helpCard.classList.add('hidden');
+      });
+
+      toggleHelp.addEventListener('click', function() {
+        helpCard.classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

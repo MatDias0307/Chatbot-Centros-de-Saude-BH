@@ -93,9 +93,7 @@ def generate_response(entities: dict, centers_info: Optional[List[Dict]]) -> str
     centros_por_bairro = {}
     for center in centers_info:
         bairro = center.get('NOME_BAIRRO_POPULAR_CS', 'Desconhecido')
-        if bairro not in centros_por_bairro:
-            centros_por_bairro[bairro] = []
-        centros_por_bairro[bairro].append(center)
+        centros_por_bairro.setdefault(bairro, []).append(center)
 
     busca_por_nome = entities.get('centro_saude') is not None
     busca_por_bairro = entities.get('bairro') is not None
@@ -124,9 +122,9 @@ def generate_response(entities: dict, centers_info: Optional[List[Dict]]) -> str
                 f"<br>• <b>{nome}</b>: {endereco} | Telefone: {telefone}"
             )
 
-    else:  # Busca por distrito
+    else: 
         distrito = centers_info[0].get('DISTRITO_SANITARIO', 'Belo Horizonte')
-        response_lines.append(f"Encontrei {len(centers_info)} centro(s) de saúde no distrito {distrito}:<br>")
+        response_lines.append(f"Encontrei {len(centers_info)} centro(s) de saúde no distrito {distrito}:")
 
         for bairro, centros in centros_por_bairro.items():
             response_lines.append(f"<br><br><b>Bairro {bairro}:</b>")
